@@ -1,0 +1,25 @@
+{
+  "name": "node-js",
+  "version": "0.1.0",
+  "description": "first node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KirillIv2003/Nodejs.git"
+  },
+  "author": "Kirill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KirillIv2003/Nodejs/issues"
+  },
+  "homepage": "https://github.com/KirillIv2003/Nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
