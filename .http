@@ -1,0 +1,24 @@
+GET / HTTP/1.1
+Host: 127.0.1.1:5500
+
+###
+
+GET /user HTTP/1.1
+Host: 127.0.1.1:5500
+
+###
+
+POST /comments HTTP/1.1
+Host: 127.0.1.1:5500
+Content-Type: application/json
+
+{
+    "name": "Kirill",
+    "email": "kirill2003iv@gmail.com",
+    "password": "kirill2003iv"
+}
+
+###
+
+GET /stats HTTP/1.1
+Host: 127.0.1.1:5500
