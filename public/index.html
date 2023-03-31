@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>путь http://127.0.0.2:5500/v1, метод GET, выодит Hello</li>
+        <li>путь http://127.0.0.2:5500/v1/user, метод GET, выводит список пользователей { id: 1, name: "Ivan" }, { id: 2, name: "Kirill" }</li>
+        <li>путь http://127.0.0.2:5500/v1/user, метод POST, выводит
+            "name": "Kirill",
+            "email": "kirill2003iv@gmail.com",
+            "password": "kirill2003iv"
+        </li>
+        <li>путь http://127.0.0.2:5500/v1/stats, метод GET, выводит таблицу где в левой колонке userAgent и количество запросов в правой</li>
+    </ul>
+</body>
+</html>

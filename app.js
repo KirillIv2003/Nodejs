@@ -86,11 +86,14 @@ function updateStats(req) {
 
 server.on("request", (req, res) => {
     updateStats(req);
+    console.log("Новый запрос");
 });
 
 server.on("connection", () => {
     console.log("Новое подключение");
 });
+
+
 
 server.listen(port, host, () => {
     console.log(`Server is on. http://${host}:${port}`)
