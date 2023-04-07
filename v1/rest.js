@@ -1,46 +1,51 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser')
+
+const jsonParser = bodyParser.json({
+    extended: false,
+});
 
 const users = [{ id: 1, name: "Ivan" }, { id: 2, name: "Kirill" }];
 
 const stats = {};
 
 router.get('/', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    res.end("Hello");
+    
+    res.status(200).send("Hello");
 });
 
 router.get('/user', (req, res) => {
-    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(users));
+    res.status(200).send(JSON.stringify(users));
 });
 
-router.post('/user', (req, res) => {
-    let body = "";
-    req.on("data", (chunk) => {
-        body += chunk.toString();
-    });
-    req.on("end", () => {
-        res.end(body);
-    });
+router.post('/user', jsonParser, (req, res) => {
+    let body = req.body;
+    res.status(200).send(req.body);
+    //console.log(req.body);
+    // req.on("data", (chunk) => {
+    //     body += chunk.toString();
+    // });
+    // req.on("end", () => {
+    //     res.send(body);
+    // });
 });
 
 router.get('/comments', (req, res) => {
-    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(users));
+    res.status(200).send(JSON.stringify(users));
 });
 
-router.post('/comments', (req, res) => {
-    let body = "";
-    req.on("data", (chunk) => {
-        body += chunk.toString();
-    });
-    req.on("end", () => {
-        res.end(body);
-    });
+router.post('/comments', jsonParser, (req, res) => {
+    let body = req.body;
+    res.send(req.body);
+    // req.on("data", (chunk) => {
+    //     body += chunk.toString();
+    // });
+    // req.on("end", () => {
+    //     res.send(body);
+    // });
 });
 
 router.get('/stats', (req, res) => {
@@ -52,15 +57,15 @@ router.get('/stats', (req, res) => {
     }
     html += '</table>';
     // отправляем ответ с HTML-таблицей
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write(html);
-    res.end();
+    // res.writeHead(200, { 'Content-Type': 'text/html' });
+    // res.write(html);
+    // res.send();
+    res.status(200).send(html);
 });
 
 router.use((req, res) => {
-    res.statusCode = 404;
     res.setHeader("Content-Type", "text/plain");
-    res.end("Not found");
+    res.status(404).send("Not found");
 });
 
 function updateStats(req) {
