@@ -9,11 +9,75 @@ Content-Type: application/json
 
 {
     "name": "Kirill",
-    "text": "Privet"
+    "text": "ijni"
 }
+
 ###
 
-GET /v2/comments/6448f02257d7f2b181003ea2 HTTP/1.1
+POST /v2/login HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    "userName": "KirillIvanov2"
+}
+
+###
+
+POST /v2/models HTTP/1.1
+api: 647c8150-a983-406a-ab28-6becf413001e
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    
+    "userName": "KirillIvanov",
+    "modelName": "first model",
+    "code": "firdt model",
+    "description": "my model"
+}
+
+###
+
+PUT  /v2/models/646544274ebcc835c4da6245 HTTP/1.1
+api: 647c8150-a983-406a-ab28-6becf413001e
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    "userName": "KirillIvanov",
+    "modelName": "first model",
+    "code": ["first model", "second model"],
+    "description": "my model",
+    "comments": ["644ad2a2a724e7e7970c57e9", "644ad25da724e7e7970c57e4"]
+}
+
+###
+
+
+POST  /v2/models HTTP/1.1
+api: cb95037c-42b9-4a41-a8ab-f2218158e2dc
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    "userName": "KirillIvanov2",
+    "modelName": "first model2",
+    "code": ["first model2", "second model2"],
+    "description": "my model2",
+    "comments": ["644ad2a2a724e7e7970c57e9KI", "644ad25da724e7e7970c57e4KI"]
+}
+
+
+###
+
+GET  /v2/models HTTP/1.1
+Host: 127.0.0.1:5500
+
+
+###
+
+GET /v2/comments/5464 HTTP/1.1
 Host: 127.0.0.1:5500
 
 ###

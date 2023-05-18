@@ -15,12 +15,21 @@ async function getCommentId(req, res) {
     }
 }
 
-async function postAdd(req, res) {
+async function postAdd(req, res, next) {
     const createdAt = new Date();
     const { name, text } = req.body;
-    commentServices.AddComment({ name, text, createdAt });
-    let allComments = await commentServices.findComments()
-    res.json(allComments)
+    if (!name || !text){
+        err = new Error("Неверные данные в комментарии");
+    }
+    try{
+        commentServices.AddComment({ name, text, createdAt });
+        let allComments = await commentServices.findComments();
+        res.json(allComments);
+    }
+    catch(err){
+        res.statusCode = 500;
+        next(err);
+    }
 }
 
 module.exports = {
