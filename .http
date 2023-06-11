@@ -19,7 +19,7 @@ Host: 127.0.0.1:5500
 Content-Type: application/json
 
 {
-    "userName": "KirillIvanov2"
+    "userName": "KirillIvanov5"
 }
 
 ###
@@ -30,7 +30,6 @@ Host: 127.0.0.1:5500
 Content-Type: application/json
 
 {
-    
     "userName": "KirillIvanov",
     "modelName": "first model",
     "code": "firdt model",
@@ -47,7 +46,7 @@ Content-Type: application/json
 {
     "userName": "KirillIvanov",
     "modelName": "first model",
-    "code": ["first model", "second model"],
+    "code": ["firs", "secon"],
     "description": "my model",
     "comments": ["644ad2a2a724e7e7970c57e9", "644ad25da724e7e7970c57e4"]
 }
@@ -61,11 +60,11 @@ Host: 127.0.0.1:5500
 Content-Type: application/json
 
 {
-    "userName": "KirillIvanov2",
-    "modelName": "first model2",
-    "code": ["first model2", "second model2"],
-    "description": "my model2",
-    "comments": ["644ad2a2a724e7e7970c57e9KI", "644ad25da724e7e7970c57e4KI"]
+    "userName": "KirillIvanov3",
+    "modelName": "first model3",
+    "code": ["first model3", "second model3"],
+    "description": "my model3",
+    "comments": ["644ad2a2a724e7e7970c", "644ad25da724e7e797"]
 }
 
 
@@ -77,7 +76,7 @@ Host: 127.0.0.1:5500
 
 ###
 
-GET /v2/comments/5464 HTTP/1.1
+GET /v2/comments HTTP/1.1
 Host: 127.0.0.1:5500
 
 ###
@@ -95,4 +94,9 @@ Content-Type: application/json
 ###
 
 GET /v1/stats HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
+
+GET /v2/models/646544274ebcc835c4da6245 HTTP/1.1
 Host: 127.0.0.1:5500
