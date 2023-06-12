@@ -39,11 +39,11 @@ getApiKey.addEventListener("click", (e) => {
 });
 
 login.addEventListener("click", (e) => {
-    
+    e.preventDefault();
     console.log("getApi");
     const id = loginName.value;
     console.log("api:", id);
-    api = data.api;
+    api = id;
     console.log("api:", api);
     })
 
